@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+</head>
+<body>
+    <h2>Add Employee</h2>
+    <form action="/add-employee" method="post">
+        Employee Name: <input type="text" name="ename"><br>
+        Salary: <input type="text" name="sal"><br>
+        Manager ID: <input type="text" name="mgr"><br>
+        Commission: <input type="text" name="comm"><br>
+        Department No: <input type="text" name="deptno"><br>
+        <input type="submit" value="Save">
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>Emp No</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Manager</th>
+            <th>Commission</th>
+            <th>Dept No</th>
+        </tr>
+        <% employees.forEach(function(employee) { %>
+        <tr>
+            <td><%= employee.empno %></td>
+            <td><%= employee.ename %></td>
+            <td><%= employee.sal %></td>
+            <td><%= employee.mgr %></td>
+            <td><%= employee.comm %></td>
+            <td><%= employee.deptno %></td>
+        </tr>
+        <% }); %>
+    </table>
+</body>
+</html>
